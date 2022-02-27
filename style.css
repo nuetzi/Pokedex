@@ -34,8 +34,3 @@ h1 {
 h3 {
     text-transform: capitalize;
 }
-
-#pokemonArtwork {
-    width: 50px;
-    height: auto;
-}
