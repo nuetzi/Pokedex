@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #d0d0d0;
+    color: #14213d;
+}
+
+#button {
+    gap: 10px;
+    margin: 30px;
+    background-image: linear-gradient(to bottom right, #999999, #bbbbbb);
+    color: #202020;
+    font-size: 12pt;
+    text-align:center;
+    border: solid 3px black;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+    box-shadow: 0px 2px 4px #555555;
+    cursor: pointer;
+    width: 80px;
+    height: 20px;
+    border-radius: 10px;
+}
+
+#button:active {
+    position: relative;
+    box-shadow: 0px 1px 2px #333333;
+    top: 1.5px;
+}
+
+h1 {
+    text-transform: capitalize;
+}
+
+h3 {
+    text-transform: capitalize;
+}
+
+#pokemonArtwork {
+    width: 50px;
+    height: auto;
+}
