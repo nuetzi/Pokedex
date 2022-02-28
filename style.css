@@ -59,15 +59,18 @@ h1 {
     font-size: 22pt;
 }
 
-h3 {
-}
-
 div:empty {
     display:none;
 }
 
 #pokemonName {
+    text-align: center;
     text-transform: capitalize;
+    text-decoration: underline;
+}
+
+#pokemonNumber {
+    text-align: center;
 }
 
 #pokemonType {

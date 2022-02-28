@@ -10,7 +10,7 @@ const fetchData = () => {
     })
     .then((data) => {
         let adjustedName = data.name.split("-").join(" ");          // Replace hyphens with spaces
-        pokemonName.innerHTML = `<u>${adjustedName}</u>`;
+        pokemonName.innerHTML = `${adjustedName}`;
         pokemonNumber.innerHTML = `Pokédex ID#: ${data.id}`;
     
         if (data.types.length > 1) {
