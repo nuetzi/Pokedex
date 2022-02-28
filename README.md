@@ -1,2 +1,2 @@
-# Pokedex
- Pokedex API Project
+# Pokédex
+ Pokédex API Project
