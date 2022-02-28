@@ -65,7 +65,7 @@ const fetchData = () => {
         pokemonAbility1.innerHTML = "";
         pokemonAbility2.innerHTML = "";
         pokemonAbility3.innerHTML = "";
-        pokemonArtwork.innerHTML = `<img src="./MissingNo.webp" width="250">`;
+        pokemonArtwork.innerHTML = `<img src="./missingno.png" width="250">`;
         pokemonSpriteDefault.innerHTML = "";
         pokemonSpriteShiny.innerHTML = "";
     })
