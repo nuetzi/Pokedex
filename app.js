@@ -1,45 +1,3 @@
-// let p = new Promise(
-//     (resolve, reject) => {
-//         let a = 1+2
-//         if(a == 2) {
-//             resolve("success")
-//         }
-//         else {
-//             reject("failed")
-//         }
-// })
-
-// p.then((message) => {
-//     console.log("We are in the then " + message)
-// }).catch((message) => {
-//     console.log("We are in the catch " + message)
-// })
-
-
-// In-class example of using Promise
-
-// const idFunction = () => {
-//     let idTest = new Promise(
-//         (resolve, reject) => {   
-//             let id = document.getElementById("input1").value;
-//             if(id.length >= 2) {
-//                 resolve(id);
-//             }
-//             else {
-//                 reject("Error");
-//             }    
-//     });
-
-//     idTest.then((message) => {
-//         console.log("Welcome " + message);
-//     }).catch((message) => {
-//         console.log(message + " 404");
-//     });
-// }
-
-// document.getElementById("button").addEventListener('click', idFunction);
-
-
 const fetchData = () => {
     let id = document.getElementById("input1").value;
 
@@ -51,12 +9,15 @@ const fetchData = () => {
         return res.json();
     })
     .then((data) => {
-        pokemonName.innerHTML = `Name: ${data.name}`;
+        let adjustedName = data.name.split("-").join(" ");
+        pokemonName.innerHTML = `Name: ${adjustedName}`;
         pokemonNumber.innerHTML = `Pokédex #: ${data.id}`;
     
-        pokemonType1.innerHTML = `Type 1: ${data.types[0].type.name}`;
         if (data.types.length > 1) {
-            pokemonType2.innerHTML = `Type 2: ${data.types[1].type.name}`;
+            pokemonType.innerHTML = `Type: ${data.types[0].type.name} / ${data.types[1].type.name}`;
+        }
+        else {
+            pokemonType.innerHTML = `Type: ${data.types[0].type.name}`;
         }
 
         let meters = data.height / 10;
@@ -67,11 +28,11 @@ const fetchData = () => {
             feet += 1;
             inchesRemainder = 0;
         }
-        pokemonHeight.innerHTML = `Height: ${feet}' ${inchesRemainder}"  / ${meters}m`;
+        pokemonHeight.innerHTML = `Height: ${feet}'${inchesRemainder}"  / ${meters} m`;
     
         let kgs = (data.weight / 10).toFixed(1);
         let lbs = (data.weight * 0.2204623).toFixed(1);
-        pokemonWeight.innerHTML = `Weight: ${lbs}lbs  /  ${kgs}kg`;
+        pokemonWeight.innerHTML = `Weight: ${lbs} lbs  /  ${kgs} kg`;
 
         let ability1 = data.abilities[0].ability.name.split("-").join(" ");
         pokemonAbility1.innerHTML = `Ability 1: ${ability1}`;
@@ -82,6 +43,13 @@ const fetchData = () => {
                 let ability3 = data.abilities[2].ability.name.split("-").join(" ");     // No Pokémon has more than 3 abilities
                 pokemonAbility3.innerHTML = `Ability 3: ${ability3}`;
             }
+            else {
+                pokemonAbility3.innerHTML = "";
+            }
+        }
+        else {
+            pokemonAbility2.innerHTML = "";
+            pokemonAbility3.innerHTML = "";
         }
 
         pokemonArtwork.innerHTML = `<img src=${data.sprites.other["official-artwork"].front_default} width="250">`;
