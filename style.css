@@ -17,7 +17,7 @@ body {
     border-radius: 10px;
     margin-left: 20px;
     padding: 20px;
-    width: 700px;
+    width: 660px;
     display: grid;
     grid-template-rows: 250px 120px;
     grid-template-columns: 400px 125px 125px;
@@ -86,6 +86,7 @@ h1 {
 #pokemonArtwork {
     grid-row: 1;
     grid-column: 2 / 4;
+    margin-top: 20px;
     border: 2px solid black;
     border-radius: 10px;;
     background-color: antiquewhite;
