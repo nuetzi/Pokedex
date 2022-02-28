@@ -10,7 +10,7 @@ const fetchData = () => {
     })
     .then((data) => {
         let adjustedName = data.name.split("-").join(" ");
-        pokemonName.innerHTML = `Name: ${adjustedName}`;
+        pokemonName.innerHTML = `${adjustedName}`;
         pokemonNumber.innerHTML = `Pokédex #: ${data.id}`;
     
         if (data.types.length > 1) {
@@ -59,8 +59,7 @@ const fetchData = () => {
     .catch(() => {
         pokemonName.innerHTML = "Error: Invalid Pokémon Number";
         pokemonNumber.innerHTML = "";
-        pokemonType1.innerHTML = "";
-        pokemonType2.innerHTML = "";
+        pokemonType.innerHTML = "";
         pokemonHeight.innerHTML = "";
         pokemonWeight.innerHTML = "";
         pokemonAbility1.innerHTML = "";
