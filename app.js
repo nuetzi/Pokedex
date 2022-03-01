@@ -55,7 +55,7 @@ const fetchData = () => {
         pokemonSpriteShiny.innerHTML = `<u>Shiny:</u> <br> <img src=${data.sprites.front_shiny}>`;
     })
     .catch(() => {
-        pokemonName.innerHTML = "Error: Unknown Pokémon";        // Clears all fields and displays an error message for invalid lookups
+        pokemonName.innerHTML = "Error: Invalid Pokémon";        // Clears all fields and displays an error message for invalid lookups
         pokemonNumber.innerHTML = "Pokédex ID#: MissingNo.";
         pokemonType.innerHTML = "Type: -----";
         pokemonMeasurements.innerHTML = "Height: ----- <br> Weight: -----";
